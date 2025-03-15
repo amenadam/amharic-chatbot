@@ -2,7 +2,13 @@ function normalizeText(text) {
   return text.replace(/[፣፤፡።]/g, "").trim(); // Remove common punctuation marks
 }
 
-const defaultMsg = [" ገና አማርኛ እየተማርኩ ነው።", " ምን እንዳሉ አልገባኝም", "ምን አሉኝ"];
+const defaultMsg = [
+  "ገና አማርኛ እየተማርኩ ነው።",
+  "ምን እንዳሉ አልገባኝም",
+  "ምን አሉኝ",
+  "አማርኛዎት አልገባኝም",
+  " ",
+];
 
 function randomDefaultMsg() {
   let randomMsg = defaultMsg[Math.floor(Math.random() * defaultMsg.length)];
@@ -75,6 +81,13 @@ function processMessage(message) {
   ) {
     return "ሰላም! እንዴት ነህ/ነሽ?";
   } else if (
+    lowerMessage.includes("ጎበዝ") ||
+    lowerMessage.includes("አንበሳ") ||
+    lowerMessage.includes("ትምቸኛለህ") ||
+    lowerMessage.includes("ትገርማለህ")
+  ) {
+    return "አመሰግናለሁ";
+  } else if (
     lowerMessage.includes("ማነህ") ||
     lowerMessage.includes("ስምህ") ||
     lowerMessage.includes("አንተ ሰው ነህ?")
@@ -93,7 +106,8 @@ function processMessage(message) {
     lowerMessage.includes("ምርቶች") ||
     lowerMessage.includes("ምርቶ") ||
     lowerMessage.includes("ምርት") ||
-    lowerMessage.includes("ምነ ምን") ||
+    lowerMessage.includes("ምን ምን") ||
+    lowerMessage.includes("ሽያጭ") ||
     lowerMessage.includes("ማግኘት") ||
     lowerMessage.includes("ልግዛ")
   ) {
@@ -120,6 +134,7 @@ function processMessage(message) {
     lowerMessage.includes("ስልክ") ||
     lowerMessage.includes("ኢሜል") ||
     lowerMessage.includes("አድራሻ") ||
+    lowerMessage.includes("ሱቅ") ||
     lowerMessage.includes("email") ||
     lowerMessage.includes("phone") ||
     lowerMessage.includes("location")
@@ -142,6 +157,8 @@ function processMessage(message) {
   } else if (
     lowerMessage.includes("ቻው") ||
     lowerMessage.includes("ባይ") ||
+    lowerMessage.includes("በቃ") ||
+    lowerMessage.includes("ተው") ||
     lowerMessage.includes("ሰላም ሁን")
   ) {
     return `በፈለጉት ሰዓት ላስተናግዶ ዝግጁ ነኝ`;
@@ -189,4 +206,5 @@ module.exports = {
   callCenterStatus,
   website,
   delivery,
+  setDeveloperName,
 };
