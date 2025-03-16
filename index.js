@@ -77,6 +77,7 @@ function processMessage(message) {
     lowerMessage.includes("hi") ||
     lowerMessage.includes("Hey") ||
     lowerMessage.includes("what's up") ||
+    lowerMessage.includes("እንዴት ነሽ") ||
     lowerMessage.includes("እንዴት ነህ")
   ) {
     return "ሰላም! እንዴት ነህ/ነሽ?";
@@ -84,12 +85,16 @@ function processMessage(message) {
     lowerMessage.includes("ጎበዝ") ||
     lowerMessage.includes("አንበሳ") ||
     lowerMessage.includes("ትምቸኛለህ") ||
+    lowerMessage.includes("ትገርሚያለሽ") ||
     lowerMessage.includes("ትገርማለህ")
   ) {
     return "አመሰግናለሁ";
   } else if (
     lowerMessage.includes("ማነህ") ||
+    lowerMessage.includes("ማነሽ") ||
     lowerMessage.includes("ስምህ") ||
+    lowerMessage.includes("ስምሽ") ||
+    lowerMessage.includes("አንቺ ሰው ነሽ") ||
     lowerMessage.includes("አንተ ሰው ነህ?")
   ) {
     return `እኔ ${botName} እባላለሁ።` + "\n" + ` በ ${developerName} ነው የተገነባውት`; //
@@ -140,25 +145,29 @@ function processMessage(message) {
     lowerMessage.includes("location")
   ) {
     return `የ${companyName} ስልክ ቁጥር ${phoneNo} \nየኢምይል አድራሻ ${emailAdd} \nአድራሻችን ${location} ነው።`;
-  } else if (lowerMessage.includes("አስተያየት")) {
+  } else if (lowerMessage.includes("አስተያየት") || lowerMessage.includes("ቅሬታ")) {
     return `አስተያየቶን ለመቀበል ዝግጁ ነኝ`;
   } else if (
     lowerMessage.includes("መስራት") ||
     lowerMessage.includes("ታቃለህ") ||
     lowerMessage.includes("ታቃለ") ||
     lowerMessage.includes("ታውቃለህ") ||
+    lowerMessage.includes("ታውቂያለሽ") ||
+    lowerMessage.includes("ታቂያለሽ") ||
     lowerMessage.includes("ታውቃለ")
   ) {
     return `በደንብ እንድማር ከረዳችሁኝ ብዙ ነገር መስራት እችላለሁ`;
   } else if (lowerMessage.includes(botName)) {
     return `አቤት ምን ልታዘዝ`;
   } else if (lowerMessage.includes("በቀሉ")) {
-    return `በቀሉ ለጊዜው ስራ አቁማለች`;
+    return `በቀሉን አሁን እዚ የለችም`;
   } else if (
     lowerMessage.includes("ቻው") ||
     lowerMessage.includes("ባይ") ||
     lowerMessage.includes("በቃ") ||
     lowerMessage.includes("ተው") ||
+    lowerMessage.includes("ተይ") ||
+    lowerMessage.includes("ሰላም ሁኚ") ||
     lowerMessage.includes("ሰላም ሁን")
   ) {
     return `በፈለጉት ሰዓት ላስተናግዶ ዝግጁ ነኝ`;
