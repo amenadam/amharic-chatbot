@@ -16,13 +16,21 @@ const chatbot = require("amharic-chatbot");
 
 console.log(chatbot.processMessage("ሰላም"));
 
-customize your bot by including the folloeing
+customize your bot by including the following
+
+
 setBotName("አበበ");
+
 setCompanyName("የአበበ ድርጅት");
+
 setOpenHours("opening hour", "closing hour", "no of opening days");
+
 setContactAddress("0937147373", "amenadamsolomon5@gmail.com", "ጅማ");
+
 callCenterStatus(true);
+
 website(true, "https://acelinks.rf.gd");
+
 delivery(true, true);
 
 🛠 Features
